@@ -64,14 +64,14 @@ export default function Login() {
                   >
                     Login
                   </Button>
-                  <Button
-                    className="registerbtn btn "
-                    type="submit"
-                    onClick={submitForm}
-                  >
-                    Register
-                  </Button>
                 </Form.Group>
+                <Button
+                  className="registerbtn btn "
+                  type="submit"
+                  onClick={submitForm}
+                >
+                  Register
+                </Button>
               </Form>
             </Col>
           </Row>

@@ -1,0 +1,23 @@
+.topbar {
+  margin-top: 25px;
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  left: 325px;
+  right: 25px;
+  background-color: white;
+  /* border: solid 1px; */
+  border-radius: 10px 10px 10px 10px;
+}
+
+.addVacancy {
+  margin-top: 15px;
+  float: left;
+  color: #10375c;
+}
+
+.addCandidate {
+  margin-top: 10px;
+  float: left;
+  color: red;
+}

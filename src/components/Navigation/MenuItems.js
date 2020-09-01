@@ -85,6 +85,7 @@ export default function MenuItems() {
             </NavLink>
           </li>
         </ul>
+
         <Button className="logout" type="submit" onClick={"hoi"}>
           Logout
         </Button>
