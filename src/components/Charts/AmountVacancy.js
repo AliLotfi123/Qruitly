@@ -23,7 +23,7 @@ const charts = {
       background: "#fff",
 
       sparkline: {
-        enabled: false,
+        enabled: true,
       },
     },
 
@@ -47,8 +47,9 @@ function AmountVacancy() {
           className="chart1"
           options={charts.options}
           series={charts.series}
-          type="area"
-          width="500"
+          type="line"
+          width="400"
+          height="175"
         />
       </div>
     </div>

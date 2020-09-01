@@ -1,0 +1,13 @@
+.msgBox {
+  min-height: 300px;
+  background-color: wheat;
+
+  margin-top: 515px;
+  padding: 3px;
+  min-width: 405px;
+  position: absolute;
+
+  background-color: #fff;
+  left: 325px;
+  border-radius: 10px 10px 10px 10px;
+}
