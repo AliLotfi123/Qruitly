@@ -22,7 +22,7 @@ export default function Login() {
   }
 
   return (
-    <div className="background1">
+    <div className="login_background">
       <Container className="login-container">
         <Row>
           <Col className="col-12 col-md-12  col-lg-6 login-form-1">
