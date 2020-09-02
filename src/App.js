@@ -1,12 +1,30 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Dashboard from "./pages/Dashboard/dashboard";
+import Login from "./components/login/login";
+import Register from "./components/register/register";
+
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
-    <>
-      <Dashboard />
-    </>
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Dashboard />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
