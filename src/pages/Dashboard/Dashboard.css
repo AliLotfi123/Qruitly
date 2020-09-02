@@ -1,6 +1,166 @@
-/* .chart1 {
-  margin-top: 100px;
+.sidebarMenu {
+  padding: 2%;
+  height: 100vh;
+  background-color: #10375c;
+  color: #fff;
+}
+
+.topBar {
+  margin: 25px -10px 0px 10px;
+
+  max-height: 5%;
+  min-height: 5%;
+  min-width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.FirstGraph {
+  margin: 25px 0px 0px 10px;
+  background-color: white;
+
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.SecondGraph {
+  margin: 25px 0px 0px 10px;
+  background-color: white;
+
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.ThirdGraph {
+  margin: 25px 0px 0px 0px;
+  background-color: white;
+
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.FourthGraph {
+  margin: 25px 0px 0px 0px;
+  background-color: white;
+
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.FifthGraph {
+  margin: 25px 0px -25px 0px;
+  background-color: white;
+
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 
+.logo {
+  display: flex;
+  color: #dcae1d;
+
+  width: 300px;
+  height: 61px;
+  font-size: 36px;
+  line-height: 42px;
+  align-items: center;
+  text-align: center;
+}
+
+.Navbar {
+  padding: 2%;
+  height: 100vh;
+  width: 300px;
+
+  background-color: #10375c;
+  color: #fff;
+}
+
+.navItem {
+  color: white;
+}
+
+li {
+  list-style: none;
+  margin-top: 25px;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+}
+
+.navItem:hover {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.img-menu {
+  max-width: 25px;
+  margin-right: 15px;
+}
+
+.logout {
   position: absolute;
-  padding: 5px;
+  width: 250px;
+  height: 38.96px;
+  left: 25px;
+  bottom: 5vh;
+  align-items: center;
+  text-align: center;
+  background: #127681;
+  border-radius: 10px;
+  border: none;
+}
+
+.topbar {
+  margin-top: 25px;
+  width: 100%;
+  position: absolute;
+  height: 50px;
   left: 325px;
+  right: 25px;
+  background-color: white;
+
+  border-radius: 10px 10px 10px 10px;
+}
+
+.addVacancy {
+  margin-top: 15px;
+  float: left;
+  color: #10375c;
+}
+
+.addCandidate {
+  margin-top: 10px;
+  float: left;
+  color: red;
+}
+
+.donut {
+  margin-top: 300px;
+
+  position: absolute;
+  padding: 3px;
+  background-color: #fff;
+  left: 325px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.chart1 {
+  margin-top: 100px;
+
+  position: absolute;
+  padding: 3px;
+  background-color: #fff;
+  left: 325px;
+  border-radius: 10px 10px 10px 10px;
 } */

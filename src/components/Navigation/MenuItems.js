@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
-import "./menu.css";
 import home from "./img/home.svg";
 import vacancys from "./img/vacancys.svg";
 import candidates from "./img/candidates.svg";
 import recruiters from "./img/recruiters.svg";
 import account from "./img/account.svg";
 import Button from "react-bootstrap/esm/Button";
+import "./menuItems.css";
 
 export default function MenuItems() {
   return (
