@@ -10,8 +10,6 @@ function AmountCandidate() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  console.log("alle info", data);
-
   function byStatus(status) {
     const filterd = data.candidate.filter(
       (candidates) => candidates.status === status

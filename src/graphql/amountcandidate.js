@@ -2,10 +2,7 @@ import gql from "graphql-tag";
 
 export const GET_ALL_CANDIDATES = gql`
   subscription Allcandidates {
-    candidate(
-      where: { recruiter_id: { _eq: 4 }, user: {} }
-      order_by: { updated_at: asc }
-    ) {
+    candidate(where: { user_id: { _eq: 2 } }, order_by: { updated_at: desc }) {
       id
       first_name
       tags

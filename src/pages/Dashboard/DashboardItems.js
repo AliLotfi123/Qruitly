@@ -10,16 +10,18 @@ import "./Dashboard.css";
 import Messages from "../../components/messages/Messages";
 import Button from "react-bootstrap/esm/Button";
 
+import Vacancys from "../../components/Charts/Vacancys";
+
 export default function DashboardItems() {
   return (
     <div>
       <Row style={{ marginTop: "25px" }}>
-        <div className=" col-lg-4 col-md-12">
+        <div className=" col-lg-6 col-md-12">
           <div className="FirstGraph">
             <p>Candidate Status</p>
             <AmountCandidates />
           </div>
-          <div className="SecondGraph">
+          <div className="SecondGraph" style={{ marginTop: "25px" }}>
             <p>Vacancy Status</p>
             <AmountVacancy />
           </div>
@@ -27,11 +29,11 @@ export default function DashboardItems() {
         {/* <div className=" col-lg-4 col-md-12">
           <div className="FourthGraph ">
             <p> Fourth</p>
-            <AmountCandidates />
+            <Activities />
           </div>
         </div> */}
 
-        {/* <div className=" col-lg-4 col-md-12">
+        <div className=" col-lg-6 col-md-12">
           <div className="ThirdGraph ">
             <img
               src={standingperson}
@@ -40,32 +42,31 @@ export default function DashboardItems() {
               className="imgDashboard"
             />
             <div className="text-dashboard">
-              <h1>New vacancy</h1>
+              <h1>New Candidate</h1>
               <p>
                 Offering discounts for better online a store can loyalty weapon
                 into driving
               </p>
               <Button className="loginbtn" type="submit" onClick={"hoi"}>
-                Login
+                Add
               </Button>
             </div>
           </div>
-        </div> */}
+        </div>
 
-        {/* <div className=" col-lg-4 col-md-12">
+        <div className=" col-lg-4 col-md-12">
           <div className="FifthGraph ">
-            <p>Fifth</p>
-            <AmountVacancy />
+            <p>
+              <Messages />
+            </p>
           </div>
-        </div> */}
+        </div>
 
-        {/* <div className=" col-lg-8 col-md-12">
+        <div className=" col-lg-8 col-md-12">
           <div className="FifthGraph  ">
-            <p>Sixth</p>
-
-            <Messages />
+            <Vacancys />
           </div>
-        </div> */}
+        </div>
       </Row>
     </div>
   );
