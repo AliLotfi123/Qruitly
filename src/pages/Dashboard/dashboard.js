@@ -8,7 +8,7 @@ import MenuItems from "../../components/Navigation/MenuItems";
 import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
 import DashboardItems from "./DashboardItems";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 // flex row
 // flex boxes
 

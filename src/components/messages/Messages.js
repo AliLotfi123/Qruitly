@@ -1,7 +1,8 @@
 import React from "react";
 
-import { useSubscription, useQuery } from "@apollo/react-hooks";
+import { useSubscription } from "@apollo/react-hooks";
 import { GET_ALL_MESSAGES } from "../../graphql/messages";
+import Row from "react-bootstrap/esm/Row";
 
 export default function Messages() {
   const { loading, error, data } = useSubscription(GET_ALL_MESSAGES);
@@ -14,14 +15,16 @@ export default function Messages() {
   return (
     <div>
       {data.contact.map((conta) => (
-        <div key={conta.id}>
-          <p className="">Message ID: {conta.id}</p>
-          <p className="">Candidate ID: {conta.candidate_id}</p>
-          <p className="">Vacancy ID: {conta.vacancy_id}</p>
-          <p className="">Sender: {conta.sender}</p>
-          <p className="">Subject: {conta.subject}</p>
-          <p className="">Description: {conta.description}</p>
-        </div>
+        <Row>
+          <div key={conta.id}>
+            <p className="">Message ID: {conta.id}</p>
+            <p className="">Candidate ID: {conta.candidate_id}</p>
+            <p className="">Vacancy ID: {conta.vacancy_id}</p>
+            <p className="">Sender: {conta.sender}</p>
+            <p className="">Subject: {conta.subject}</p>
+            <p className="">Description: {conta.description}</p>
+          </div>
+        </Row>
       ))}
     </div>
   );

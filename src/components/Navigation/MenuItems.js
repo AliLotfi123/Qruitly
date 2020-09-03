@@ -8,7 +8,7 @@ import recruiters from "./img/recruiters.svg";
 import account from "./img/account.svg";
 import Button from "react-bootstrap/esm/Button";
 import "./menuItems.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 export default function MenuItems() {
   return (
     <div className="Navbar">

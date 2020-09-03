@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const GET_ALL_VACANCYS = gql`
-  query Allvacancys {
+  subscription Allvacancys {
     vacancy {
       id
       name
