@@ -12,6 +12,7 @@ import VacancyList from "./pages/Vacancy/VacancyList";
 import ReceivedMessages from "./pages/Message/ReceivedMessages";
 import AllRecruiters from "./pages/Recruiters/AllRecruiters";
 import AllCandidates from "./pages/Candidates/AllCandidates";
+import AddCandidate from "./pages/Candidates/AddCandidate";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="/addvacancy">
             <AddVacancy />
+          </Route>
+          <Route exact path="/addcandidate">
+            <AddCandidate />
           </Route>
           <Route exact path="/recruiters">
             <AllRecruiters />

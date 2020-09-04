@@ -8,6 +8,8 @@ export const GET_ALL_VACANCYS = gql`
       budget
       salary
       status
+      description
+      id
     }
   }
 `;

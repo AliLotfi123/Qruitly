@@ -80,6 +80,20 @@ export default function MenuItems() {
               Candidates
             </NavLink>
           </li>
+
+          <li>
+            <img src={dash} alt="Login" className="img-menu" />
+            <NavLink
+              className="navItem"
+              exact
+              to="/addcandidate"
+              activeStyle={{
+                fontWeight: "bold",
+              }}
+            >
+              Add Candidate
+            </NavLink>
+          </li>
           <li>
             <img src={recruiters} alt="Login" className="img-menu" />
 

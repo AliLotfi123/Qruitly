@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddVacancy.css";
+import "./AddCandidate.css";
 import Form from "react-bootstrap/esm/Form";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
@@ -12,9 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 
-import { ADD_VACANCY } from "../../graphql/addvacancy";
+import { ADD_CANDIDATE } from "../../graphql/addcandidate";
 
-export default function AddVacancyForm() {
+export default function AddCandidateForm() {
   const [name, setName] = useState("");
   const [SkillOne, setSkillOne] = useState("");
   const [skillTwo, setSkillTwo] = useState("");
@@ -23,7 +23,7 @@ export default function AddVacancyForm() {
   const tags = [SkillOne, skillTwo, skillThree];
   const [filterdBudget, setFilterdBudget] = useState(2500);
   const [filterdSalary, setFilterdFilterdSalary] = useState(2500);
-  const [AddVacancy, { data }] = useMutation(ADD_VACANCY);
+  const [AddCandidate, { data }] = useMutation(ADD_CANDIDATE);
   console.log(name);
   console.log(filterdSalary);
   console.log(filterdBudget);
@@ -33,7 +33,7 @@ export default function AddVacancyForm() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    AddVacancy({
+    AddCandidate({
       variables: {
         name,
         tags,
@@ -53,7 +53,7 @@ export default function AddVacancyForm() {
   }
 
   if (data) {
-    return <h1>Vacancy created</h1>;
+    return <h1>Candidate created</h1>;
   }
 
   const minBudget = 500;
@@ -72,7 +72,7 @@ export default function AddVacancyForm() {
           <div className="Benefit ">
             <img src={register} alt="Login" className="AddImg" />
             <div className="text-addvacancy">
-              <h4>1. Add a Vacancy</h4>
+              <h4>1. Add a candidate</h4>
               <p>
                 Offering discounts for better online a store can loyalty weapon
                 into driving
@@ -84,7 +84,7 @@ export default function AddVacancyForm() {
           <div className="Benefit ">
             <img src={contact} alt="Login" className="AddImg" />
             <div className="text-addvacancy">
-              <h4>2. Discuss with Recruiter</h4>
+              <h4>2. Discuss with employer</h4>
               <p>
                 Offering discounts for better online a store can loyalty weapon
                 into driving
@@ -96,7 +96,7 @@ export default function AddVacancyForm() {
           <div className="Benefit ">
             <img src={agreement} alt="Login" className="AddImg" />
             <div className="text-addvacancy">
-              <h4>3. Candidate has a Job!</h4>
+              <h4>3. Candidate is accepted</h4>
               <p>
                 Offering discounts for better online a store can loyalty weapon
                 into driving
@@ -115,12 +115,12 @@ export default function AddVacancyForm() {
                 className="TextForm"
               >
                 <Form.Label column sm="2">
-                  Job Title
+                  First Name
                 </Form.Label>
                 <Col sm="10">
                   <Form.Control
                     type="text"
-                    placeholder="Enter Job Title"
+                    placeholder="Enter First Name"
                     onChange={(event) => setName(event.target.value)}
                   />
                 </Col>
@@ -158,7 +158,7 @@ export default function AddVacancyForm() {
               <Form.Row>
                 <Form.Group as={Col} controlId="formBasicRangeCustom">
                   <Form.Label className="TextForm">
-                    Set Minimum Salary {Salary}
+                    Set Minimun Salary {Salary}
                   </Form.Label>
 
                   <Form.Control
@@ -174,7 +174,7 @@ export default function AddVacancyForm() {
 
                 <Form.Group as={Col} controlId="formBasicRangeCustom">
                   <Form.Label className="TextForm">
-                    Set Maximum Budget {Budget}
+                    Set Minimum Price {Budget}
                   </Form.Label>
 
                   <Form.Control
@@ -189,7 +189,7 @@ export default function AddVacancyForm() {
               <Form.Row>
                 <Form.Group as={Col} controlId="formBasicRangeCustom">
                   <div className="form-group">
-                    <label>Job Description</label>
+                    <label>Candidate Description</label>
                     <textarea
                       className="form-control rounded-0"
                       id="exampleFormControlTextarea1"

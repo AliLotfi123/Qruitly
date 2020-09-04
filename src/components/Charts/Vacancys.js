@@ -4,6 +4,7 @@ import { useSubscription } from "@apollo/react-hooks";
 
 import { GET_ALL_VACANCYS } from "../../graphql/allvacancy";
 import Table from "react-bootstrap/esm/Table";
+import Vacancy from "./Vacancy";
 
 export default function Activities() {
   const { loading, error, data } = useSubscription(GET_ALL_VACANCYS);
@@ -11,10 +12,8 @@ export default function Activities() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  console.log("Dit is alle vacatures", data);
-
   return (
-    <Table striped hover>
+    <Table className="table_background">
       <thead>
         <tr>
           <th>Vacancy</th>
@@ -22,30 +21,14 @@ export default function Activities() {
           <th>Budget</th>
           <th>Salary</th>
           <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
-      {data.vacancy.slice(0, 5).map((vacancys) => (
-        <tbody>
-          <tr
-            class={
-              vacancys.status === "Open"
-                ? "table-success"
-                : vacancys.status === "In Progress"
-                ? "table-warning"
-                : vacancys.status === "Closed"
-                ? "table-danger"
-                : ""
-            }
-          >
-            <td>{vacancys.name}</td>
-
-            <td>{vacancys.tags.join(" ")} </td>
-            <td>{vacancys.budget}</td>
-            <td>{vacancys.salary}</td>
-            <td>{vacancys.status}</td>
-          </tr>
-        </tbody>
-      ))}
+      <tbody>
+        {data.vacancy.slice(0, 4).map((vacancy) => {
+          return <Vacancy vacancy={vacancy} />;
+        })}
+      </tbody>
     </Table>
   );
 }

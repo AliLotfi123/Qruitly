@@ -3,9 +3,8 @@ import React from "react";
 import { useSubscription } from "@apollo/react-hooks";
 import { RECIEVED_MESSAGES } from "../../graphql/messages";
 import Row from "react-bootstrap/esm/Row";
-import Col from "react-bootstrap/esm/Col";
+
 import Table from "react-bootstrap/esm/Table";
-import ReceivedMessages from "../../pages/Message/ReceivedMessages";
 
 export default function Messages() {
   const { loading, error, data } = useSubscription(RECIEVED_MESSAGES);
@@ -32,7 +31,7 @@ export default function Messages() {
 
   const sections = entries.slice(0, 5).map((entry) => {
     const [sender, messages] = entry;
-    const [first, ...rest] = messages;
+    const [first] = messages;
     return (
       <>
         <tr>

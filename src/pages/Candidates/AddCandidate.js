@@ -1,4 +1,5 @@
 import React from "react";
+import "./AddCandidate.css";
 
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
@@ -6,9 +7,10 @@ import Col from "react-bootstrap/esm/Col";
 import MenuItems from "../../components/Navigation/MenuItems";
 import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AddCandidateForm from "./AddCandidateForm";
 
-import Vacancys from "./Vacancys";
-export default function Activities() {
+export default function AddCandidate() {
   return (
     <Container fluid>
       <Row>
@@ -25,8 +27,7 @@ export default function Activities() {
               <RightBar />
             </div>
           </Col>
-
-          <Vacancys />
+          <AddCandidateForm />
         </Col>
       </Row>
     </Container>

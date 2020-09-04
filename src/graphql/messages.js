@@ -45,6 +45,7 @@ export const RECIEVED_MESSAGES = gql`
       subject
       text
       timestamp
+      id
     }
   }
 `;
