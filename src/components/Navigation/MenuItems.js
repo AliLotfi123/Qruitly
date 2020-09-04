@@ -6,10 +6,18 @@ import vacancys from "./img/vacancys.svg";
 import candidates from "./img/candidates.svg";
 import recruiters from "./img/recruiters.svg";
 import account from "./img/account.svg";
+import message from "./img/message.svg";
+import dash from "./img/dash.svg";
+
 import Button from "react-bootstrap/esm/Button";
 import "./menuItems.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 export default function MenuItems() {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="Navbar">
       <div className="container">
@@ -30,12 +38,13 @@ export default function MenuItems() {
               Home
             </NavLink>
           </li>
+
           <li>
-            <img src={vacancys} alt="Login" className="img-menu" />
+            <img src={vacancys} alt="Vacancys" className="img-menu" />
             <NavLink
               className="navItem"
               exact
-              to="/login"
+              to="/vacancys"
               activeStyle={{
                 fontWeight: "bold",
               }}
@@ -43,12 +52,27 @@ export default function MenuItems() {
               Vacancys
             </NavLink>
           </li>
+
+          <li>
+            <img src={dash} alt="Login" className="img-menu" />
+            <NavLink
+              className="navItem"
+              exact
+              to="/addvacancy"
+              activeStyle={{
+                fontWeight: "bold",
+              }}
+            >
+              Add Vacancys
+            </NavLink>
+          </li>
+
           <li>
             <img src={candidates} alt="Login" className="img-menu" />
             <NavLink
               className="navItem"
               exact
-              to="/login"
+              to="/candidates"
               activeStyle={{
                 fontWeight: "bold",
               }}
@@ -62,12 +86,26 @@ export default function MenuItems() {
             <NavLink
               className="navItem"
               exact
-              to="/login"
+              to="/recruiters"
               activeStyle={{
                 fontWeight: "bold",
               }}
             >
               Recruiters
+            </NavLink>
+          </li>
+          <li>
+            <img src={message} alt="Login" className="img-menu" />
+
+            <NavLink
+              className="navItem"
+              exact
+              to="/messages"
+              activeStyle={{
+                fontWeight: "bold",
+              }}
+            >
+              Messages
             </NavLink>
           </li>
           <li>
@@ -86,7 +124,7 @@ export default function MenuItems() {
           </li>
         </ul>
 
-        <Button className="logout" type="submit" onClick={"hoi"}>
+        <Button className="logout" type="submit" onClick={handleSubmit}>
           Logout
         </Button>
       </div>

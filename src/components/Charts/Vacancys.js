@@ -24,7 +24,7 @@ export default function Activities() {
           <th>Status</th>
         </tr>
       </thead>
-      {data.vacancy.map((vacancys) => (
+      {data.vacancy.slice(0, 5).map((vacancys) => (
         <tbody>
           <tr
             class={
