@@ -25,6 +25,7 @@ function AmountCandidate() {
                 <th>Skills</th>
                 <th>Price</th>
                 <th>Salary</th>
+                <th>Price</th>
               </tr>
             </thead>
 
