@@ -1,18 +1,15 @@
 import React from "react";
-import "./Dashboard.css";
-
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import "./AddVacancy.css";
+import AddVacancyForm from "./AddVacancyForm";
 import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
 import MenuItems from "../../components/Navigation/MenuItems";
 import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
-import DashboardItems from "./DashboardItems";
 import "bootstrap/dist/css/bootstrap.min.css";
-// flex row
-// flex boxes
 
-export default function Dashboard() {
+export default function AddVacancy() {
   return (
     <Container fluid>
       <Row>
@@ -29,26 +26,9 @@ export default function Dashboard() {
               <RightBar />
             </div>
           </Col>
-          <DashboardItems />
+          <AddVacancyForm />
         </Col>
       </Row>
     </Container>
-
-    // <Container fluid>
-    //   <Row>
-    //     <Col>
-    //
-    //
-    //     </Col>
-    //     <Col>
-    //
-    //
-    //     </Col>
-    //     <Col></Col>
-    //     <Col>
-    //
-    //     </Col>
-    //   </Row>
-    // </Container>
   );
 }

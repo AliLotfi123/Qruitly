@@ -1,21 +1,25 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import { useQuery } from "@apollo/react-hooks";
+import { useSubscription } from "@apollo/react-hooks";
 
 import { GET_ALL_VACANCYS } from "../../graphql/amountvanacy.js";
 
 function AmountVacancy() {
-  const { loading, error, data } = useQuery(GET_ALL_VACANCYS);
+  const { loading, error, data } = useSubscription(GET_ALL_VACANCYS);
 
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  console.log(data.vacancy);
+  // console.log("This is the vacancy data", data.vacancy);
 
   const salarys = data.vacancy.map((vacan) => {
-    console.log(vacan.salary);
+    // console.log("This is the salarys", vacan.salary);
     return vacan.salary;
   });
+
+  // console.log(data.vacancy.length);
+
+  // console.log("array of salary", salarys);
 
   const charts = {
     options: {
@@ -41,13 +45,21 @@ function AmountVacancy() {
       },
 
       xaxis: {
-        categories: [!salarys ? "loading" : salarys],
+        categories: [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+
+          // !salarys ? "loading" : salarys
+        ],
       },
     },
     series: [
       {
         name: "series-1",
-        data: [!salarys ? "loading" : salarys],
+        data: [...salarys],
       },
     ],
   };
@@ -58,7 +70,7 @@ function AmountVacancy() {
         <Chart
           options={charts.options}
           series={charts.series}
-          type="line"
+          type="area"
           width="100%"
           height="100%"
         />

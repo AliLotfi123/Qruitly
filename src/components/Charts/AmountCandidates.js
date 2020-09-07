@@ -1,20 +1,42 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import { useSubscription } from "@apollo/react-hooks";
 
-const charts = {
-  options: {},
-  series: [44, 55, 41, 17, 15],
-  labels: ["A", "B", "C", "D", "E"],
-};
+import { GET_ALL_CANDIDATES } from "../../graphql/amountcandidate";
 
-function AmountVacancy() {
+function AmountCandidate() {
+  const { loading, error, data } = useSubscription(GET_ALL_CANDIDATES);
+
+  if (loading) return "Loading...";
+  if (error) return <p>Error! ${error.message}</p>;
+
+  function byStatus(status) {
+    const filterd = data.candidate.filter(
+      (candidates) => candidates.status === status
+    );
+    return filterd.length;
+  }
+
+  const statusses = ["Open", "Accepted", "Suggested", "Rejected"];
+  const lengths = statusses.map(byStatus);
+
+  const charts = {
+    chartOptions: {
+      labels: statusses,
+    },
+    series: lengths,
+    sparkline: {
+      enabled: false,
+    },
+  };
+
   return (
     <div>
       <div className="donut">
         <Chart
-          options={charts.options}
+          options={charts.chartOptions}
           series={charts.series}
-          type="donut"
+          type="pie"
           width="100%"
           height="100%"
         />
@@ -23,4 +45,4 @@ function AmountVacancy() {
   );
 }
 
-export default AmountVacancy;
+export default AmountCandidate;

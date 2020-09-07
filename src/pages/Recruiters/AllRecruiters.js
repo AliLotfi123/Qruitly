@@ -1,18 +1,16 @@
 import React from "react";
-import "./Dashboard.css";
 
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import Row from "react-bootstrap/esm/Row";
+
 import Container from "react-bootstrap/esm/Container";
+import Col from "react-bootstrap/esm/Col";
 import MenuItems from "../../components/Navigation/MenuItems";
 import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
-import DashboardItems from "./DashboardItems";
-import "bootstrap/dist/css/bootstrap.min.css";
-// flex row
-// flex boxes
 
-export default function Dashboard() {
+import RecruitersList from "./RecruitersList";
+
+function AmountCandidate() {
   return (
     <Container fluid>
       <Row>
@@ -29,26 +27,12 @@ export default function Dashboard() {
               <RightBar />
             </div>
           </Col>
-          <DashboardItems />
+
+          <RecruitersList />
         </Col>
       </Row>
     </Container>
-
-    // <Container fluid>
-    //   <Row>
-    //     <Col>
-    //
-    //
-    //     </Col>
-    //     <Col>
-    //
-    //
-    //     </Col>
-    //     <Col></Col>
-    //     <Col>
-    //
-    //     </Col>
-    //   </Row>
-    // </Container>
   );
 }
+
+export default AmountCandidate;
