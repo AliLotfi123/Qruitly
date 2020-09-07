@@ -7,10 +7,11 @@ import standingperson from "./img/standingperson.svg";
 import Row from "react-bootstrap/Row";
 
 import "./Dashboard.css";
-import Messages from "../../components/messages/Messages";
+
 import Button from "react-bootstrap/esm/Button";
 
 import Vacancys from "../../components/Charts/Vacancys";
+import DashboardMessages from "../Message/DashboardMessages";
 
 export default function DashboardItems() {
   return (
@@ -26,12 +27,6 @@ export default function DashboardItems() {
             <AmountVacancy />
           </div>
         </div>
-        {/* <div className=" col-lg-4 col-md-12">
-          <div className="FourthGraph ">
-            <p> Fourth</p>
-            <Activities />
-          </div>
-        </div> */}
 
         <div className=" col-lg-6 col-md-12">
           <div className="ThirdGraph ">
@@ -56,9 +51,7 @@ export default function DashboardItems() {
 
         <div className=" col-lg-4 col-md-12">
           <div className="FifthGraph ">
-            <p>
-              <Messages />
-            </p>
+            <DashboardMessages />
           </div>
         </div>
 

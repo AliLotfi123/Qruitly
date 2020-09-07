@@ -9,7 +9,7 @@ import ExtraMessages from "./ExtraMessages";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
-export default function MessageSection({ entry }) {
+export default function MesDashSections({ entry }) {
   const [sender, messages] = entry;
   const [open, setOpen] = useState(false);
   const [first, ...rest] = messages;
@@ -22,9 +22,9 @@ export default function MessageSection({ entry }) {
   return (
     <React.Fragment>
       <Row key={sender}>
-        <Col> {sender} </Col>
-        <Col> {first.subject} </Col>
-        <Col> {first.text} </Col>
+        <Col> {sender.slice(0, 12)}... </Col>
+        <Col> {first.subject.slice(0, 10)}... </Col>
+
         <Col>
           <NewMessage sender={sender} receiver={"2"} />
           <Button

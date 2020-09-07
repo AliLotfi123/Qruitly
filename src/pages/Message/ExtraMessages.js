@@ -1,5 +1,7 @@
 import React from "react";
 import Collapse from "react-bootstrap/esm/Collapse";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
 
 export default function ExtraMessages({ rest, open }) {
   return (
@@ -7,12 +9,12 @@ export default function ExtraMessages({ rest, open }) {
       {rest.map((message) => {
         return (
           <Collapse in={open} key={message.id}>
-            <tr>
-              <td></td>
-              <td>{message.subject}</td>
-              <td>{message.text}</td>
-              <td></td>
-            </tr>
+            <Row>
+              <Col></Col>
+              <Col>{message.subject}</Col>
+              <Col>{message.text}</Col>
+              <Col></Col>
+            </Row>
           </Collapse>
         );
       })}

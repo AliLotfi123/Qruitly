@@ -23,6 +23,7 @@ export const SEND_MESSAGE = gql`
     $receiver: Int
     $subject: String
     $description: String
+    $id: Int
   ) {
     insert_messages(
       objects: {
@@ -45,7 +46,10 @@ export const SEND_MESSAGE = gql`
         }
       }
     }
-    update_vacancy(where: { id: { _eq: 9 } }, _set: { status: "In Progress" }) {
+    update_vacancy(
+      where: { id: { _eq: $id } }
+      _set: { status: "In Progress" }
+    ) {
       returning {
         status
         id

@@ -10,16 +10,9 @@ function AmountVacancy() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  // console.log("This is the vacancy data", data.vacancy);
-
   const salarys = data.vacancy.map((vacan) => {
-    // console.log("This is the salarys", vacan.salary);
     return vacan.salary;
   });
-
-  // console.log(data.vacancy.length);
-
-  // console.log("array of salary", salarys);
 
   const charts = {
     options: {
