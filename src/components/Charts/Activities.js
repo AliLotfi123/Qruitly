@@ -10,7 +10,5 @@ export default function Activities() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  console.log("Dit is activity data", data.user);
-
   return <div>{data.candidates}</div>;
 }

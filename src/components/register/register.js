@@ -19,7 +19,6 @@ export default function Register() {
   const [userType, setUserType] = useState("");
 
   function submitForm(event) {
-    console.log("Login Worked");
     event.preventDefault();
     setEmail("");
     setPassword("");
@@ -27,13 +26,6 @@ export default function Register() {
     setLastName("");
     setCompany("");
     setUserType("");
-    console.log("submitForm -> userType", userType);
-
-    console.log("Register -> firstName", firstName);
-    console.log("Register -> lastName", lastName);
-    console.log("Register -> company", company);
-    console.log("submitForm -> email", email);
-    console.log("submitForm -> password", password);
   }
 
   const users = [

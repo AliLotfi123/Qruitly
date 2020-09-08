@@ -11,9 +11,12 @@ import "./Dashboard.css";
 import Button from "react-bootstrap/esm/Button";
 
 import Vacancys from "../../components/Charts/Vacancys";
+import Candidates from "../../components/Charts/Candidates";
 import DashboardMessages from "../Message/DashboardMessages";
 
 export default function DashboardItems() {
+  const Recruiter = false;
+
   return (
     <div>
       <Row style={{ marginTop: "25px" }}>
@@ -57,7 +60,7 @@ export default function DashboardItems() {
 
         <div className=" col-lg-8 col-md-12">
           <div className="FifthGraph  ">
-            <Vacancys />
+            {Recruiter ? <Vacancys /> : <Candidates />}
           </div>
         </div>
       </Row>

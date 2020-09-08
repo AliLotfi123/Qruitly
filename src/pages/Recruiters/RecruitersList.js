@@ -4,7 +4,7 @@ import { useSubscription } from "@apollo/react-hooks";
 
 import { GET_ALL_RECRUITERS } from "../../graphql/allrecruiters";
 import Row from "react-bootstrap/esm/Row";
-import Table from "react-bootstrap/esm/Table";
+
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 
@@ -13,8 +13,6 @@ function AmountCandidate() {
 
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
-
-  console.log(data.user);
 
   return (
     <Row style={{ marginTop: "25px" }} className=" col-lg-12 col-md-12 AddForm">

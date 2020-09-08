@@ -15,11 +15,6 @@ function MessageTable() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  console.log("All the messages", data);
-
-  const mesId = data.messages.map((id) => id.id);
-  console.log("MessageTable -> mesId", mesId);
-
   const senders = {};
   data.messages.forEach((message) => {
     const { sender } = message;
@@ -34,7 +29,6 @@ function MessageTable() {
   const entries = Object.entries(senders);
 
   const sections = entries.slice(0, 5).map((entry) => {
-    console.log(entry);
     return <MesDashSections key={entry[0]} entry={entry} />;
   });
 
@@ -43,7 +37,6 @@ function MessageTable() {
       <Row className="vacancysRow">
         <Col>Sender</Col>
         <Col>Subject</Col>
-
         <Col>Action</Col>
       </Row>
       {sections}

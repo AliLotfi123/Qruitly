@@ -13,6 +13,7 @@ import ReceivedMessages from "./pages/Message/ReceivedMessages";
 import AllRecruiters from "./pages/Recruiters/AllRecruiters";
 import AllCandidates from "./pages/Candidates/AllCandidates";
 import AddCandidate from "./pages/Candidates/AddCandidate";
+import MyAccount from "./pages/MyAccount/MyAccount";
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route exact path="/candidates">
             <AllCandidates />
+          </Route>
+          <Route exact path="/myaccount">
+            <MyAccount />
           </Route>
         </Switch>
       </Router>
