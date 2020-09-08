@@ -5,6 +5,9 @@ import Modal from "react-bootstrap/esm/Modal";
 import cross from "./img/cross.svg";
 import like from "./img/like.svg";
 import risk from "./img/risk.svg";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
+import NewMessage from "../../pages/Message/NewMessage";
 
 export default function Vacancy({ vacancy }) {
   const [show, setShow] = useState(false);
@@ -14,26 +17,22 @@ export default function Vacancy({ vacancy }) {
 
   const handleClosed = () => setShow(true);
 
-  return (
-    <tr
-      key={vacancy.id}
-      // class={
-      //   vacancys.status === "Open"
-      //     ? "table-success"
-      //     : vacancys.status === "In Progress"
-      //     ? "table-warning"
-      //     : vacancys.status === "Closed"
-      //     ? "table-danger"
-      //     : ""
-      // }
-    >
-      <td>{vacancy.name}</td>
+  console.log("wat zijn de vacancys", vacancy.id);
 
-      <td>{vacancy.tags.join(" ")} </td>
-      <td>{vacancy.budget}</td>
-      <td>{vacancy.salary}</td>
-      <td>{vacancy.status}</td>
-      <td>
+  return (
+    <Row key={vacancy.id}>
+      <Col>
+        <Row>
+          <Col>{vacancy.name} </Col>
+        </Row>
+        <Row>
+          <Col className="subTag"> {vacancy.tags.join(", ")} </Col>
+        </Row>
+      </Col>
+      <Col>{vacancy.status}</Col>
+      <Col>€ {vacancy.budget},-</Col>
+      <Col>€ {vacancy.salary},-</Col>
+      <Col>
         <Button
           className="button-dashboard"
           size="sm"
@@ -42,18 +41,14 @@ export default function Vacancy({ vacancy }) {
               ? "success"
               : vacancy.status === "In Progress"
               ? "warning"
-              : vacancy.status === "Closed"
-              ? "danger"
-              : ""
+              : "danger"
           }
           onClick={
             vacancy.status === "Open"
               ? handleShow
               : vacancy.status === "In Progress"
               ? handleShow
-              : vacancy.status === "Closed"
-              ? handleClosed
-              : ""
+              : handleClosed
           }
         >
           <img
@@ -63,14 +58,31 @@ export default function Vacancy({ vacancy }) {
                 ? like
                 : vacancy.status === "In Progress"
                 ? risk
-                : vacancy.status === "Closed"
-                ? cross
-                : ""
+                : cross
             }
             alt="Dashboard Button"
           />
         </Button>
-        {vacancy.status === "Closed" ? (
+        {vacancy.status === "In Progress" ? (
+          <Modal size="lg" show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Job Title: {vacancy.name} </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>Description: {vacancy.description}</p>
+              <h6>Required Skills: {vacancy.tags.join(" ")}</h6>
+            </Modal.Body>
+            <Modal.Footer>
+              <h4>
+                Send message to vacancy owner:{" "}
+                <NewMessage sender={vacancy.user.company_name} receiver={"2"} />
+              </h4>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        ) : vacancy.status === "Closed" ? (
           <Modal size="lg" show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Closed</Modal.Title>
@@ -87,25 +99,6 @@ export default function Vacancy({ vacancy }) {
               </Button>
             </Modal.Footer>
           </Modal>
-        ) : vacancy.status === "In Progress" ? (
-          <Modal size="lg" show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Job Title: {vacancy.name} </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <p>Description: {vacancy.description}</p>
-              <h6>Required Skills: {vacancy.tags.join(" ")}</h6>
-            </Modal.Body>
-            <Modal.Footer>
-              <b>Hurry up! Vacancys is almost closed</b>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
         ) : (
           <Modal size="lg" show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -116,63 +109,21 @@ export default function Vacancy({ vacancy }) {
               <h6>Required Skills: {vacancy.tags.join(" ")}</h6>
             </Modal.Body>
             <Modal.Footer>
+              <h4>
+                Send message to vacancy owner:{" "}
+                <NewMessage
+                  sender={vacancy.user.company_name}
+                  receiver={"2"}
+                  id={vacancy.id}
+                />
+              </h4>
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
             </Modal.Footer>
           </Modal>
         )}
-
-        {/* <Button
-          className="button-dashboard"
-          size="sm"
-          variant={
-            vacancy.status === "Open"
-              ? "success"
-              : vacancy.status === "In Progress"
-              ? "warning"
-              : vacancy.status === "Closed"
-              ? "danger"
-              : ""
-          }
-          onClick={
-            vacancy.status === "Open"
-              ? handleShow
-              : vacancy.status === "In Progress"
-              ? handleShow
-              : vacancy.status === "Closed"
-          }
-        >
-          <img
-            className="buttonimg"
-            src={
-              vacancy.status === "Open"
-                ? like
-                : vacancy.status === "In Progress"
-                ? risk
-                : vacancy.status === "Closed"
-                ? cross
-                : ""
-            }
-            alt="Dashboard Button"
-          />
-        </Button>
-
-        <Modal size="lg" show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Job Title: {vacancy.name}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>Description: {vacancy.description}</p>
-            <h6>Required Skills: {vacancy.tags.join(" ")}</h6>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal> */}
-      </td>
-    </tr>
+      </Col>
+    </Row>
   );
 }

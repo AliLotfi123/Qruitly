@@ -10,6 +10,9 @@ export const GET_ALL_VACANCYS = gql`
       status
       description
       id
+      user {
+        company_name
+      }
     }
   }
 `;

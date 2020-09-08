@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/esm/Button";
 import { SEND_MESSAGE } from "../../graphql/messages";
 
-export default function SendMessageForm({ receiver, sender }) {
+export default function SendMessageForm({ receiver, sender, id }) {
   const [subject, setSubject] = useState("");
 
   const [description, setDescription] = useState("");
@@ -24,6 +24,7 @@ export default function SendMessageForm({ receiver, sender }) {
         receiver,
         subject,
         description,
+        id,
       },
     });
   }

@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/esm/Modal";
 import SendMessage from "./SendMessage";
 import replay from "./img/replay.svg";
 
-export default function Vacancy({ sender, receiver }) {
+export default function Vacancy({ sender, receiver, id }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -25,7 +25,7 @@ export default function Vacancy({ sender, receiver }) {
           <Modal.Title>Send Message to {receiver}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <SendMessage sender={sender} receiver={receiver} />
+          <SendMessage sender={sender} receiver={receiver} id={id} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
