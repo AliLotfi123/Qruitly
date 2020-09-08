@@ -18,13 +18,18 @@ export const GET_ALL_MESSAGES = gql`
 `;
 
 export const SEND_MESSAGE = gql`
-  mutation SendMessage {
+  mutation SendMessage(
+    $sender: String
+    $receiver: Int
+    $subject: String
+    $description: String
+  ) {
     insert_messages(
       objects: {
-        reciever: 2
-        sender: "a.lotfi@outlook.com"
-        subject: "How are you"
-        text: "Oke"
+        reciever: $receiver
+        sender: $sender
+        subject: $subject
+        text: $description
       }
     ) {
       returning {
@@ -33,6 +38,17 @@ export const SEND_MESSAGE = gql`
         subject
         text
         timestamp
+        user {
+          vacancies {
+            status
+          }
+        }
+      }
+    }
+    update_vacancy(where: { id: { _eq: 9 } }, _set: { status: "In Progress" }) {
+      returning {
+        status
+        id
       }
     }
   }

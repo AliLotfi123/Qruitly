@@ -7,9 +7,9 @@ import Col from "react-bootstrap/esm/Col";
 import MenuItems from "../../components/Navigation/MenuItems";
 import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
-import Message from "./Message";
+import MessageTable from "./MessageTable";
 
-function AmountCandidate() {
+function ReceivedMessages() {
   return (
     <>
       <Container fluid>
@@ -27,7 +27,7 @@ function AmountCandidate() {
                 <RightBar />
               </div>
             </Col>
-            <Message />
+            <MessageTable />
           </Col>
         </Row>
       </Container>
@@ -35,4 +35,4 @@ function AmountCandidate() {
   );
 }
 
-export default AmountCandidate;
+export default ReceivedMessages;

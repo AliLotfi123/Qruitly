@@ -6,6 +6,7 @@ import { GET_ALL_VACANCYS } from "../../graphql/allvacancy";
 import Table from "react-bootstrap/esm/Table";
 
 import Row from "react-bootstrap/esm/Row";
+import Vacancy from "../../components/Charts/Vacancy";
 
 export default function Activities() {
   const { loading, error, data } = useSubscription(GET_ALL_VACANCYS);
@@ -17,7 +18,7 @@ export default function Activities() {
     <Row style={{ marginTop: "25px" }}>
       <div className=" col-lg-12 col-md-12 ">
         <div className="AddForm ">
-          <Table striped hover>
+          <Table className="table_background">
             <thead>
               <tr>
                 <th>Vacancy</th>
@@ -25,30 +26,14 @@ export default function Activities() {
                 <th>Budget</th>
                 <th>Salary</th>
                 <th>Status</th>
+                <th>Action</th>
               </tr>
             </thead>
-            {data.vacancy.map((vacancys) => (
-              <tbody>
-                <tr
-                  class={
-                    vacancys.status === "Open"
-                      ? "table-success"
-                      : vacancys.status === "In Progress"
-                      ? "table-warning"
-                      : vacancys.status === "Closed"
-                      ? "table-danger"
-                      : ""
-                  }
-                >
-                  <td>{vacancys.name}</td>
-
-                  <td>{vacancys.tags.join(" ")} </td>
-                  <td>{vacancys.budget}</td>
-                  <td>{vacancys.salary}</td>
-                  <td>{vacancys.status}</td>
-                </tr>
-              </tbody>
-            ))}
+            <tbody>
+              {data.vacancy.map((vacancy) => {
+                return <Vacancy vacancy={vacancy} />;
+              })}
+            </tbody>
           </Table>
         </div>
       </div>
