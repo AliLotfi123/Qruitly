@@ -16,7 +16,7 @@ export default function Dashboard() {
   return (
     <Container fluid>
       <Row>
-        <Col className="col-2 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
+        <Col className="col-12 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
           <MenuItems className="sidebarMenu" />
         </Col>
 
