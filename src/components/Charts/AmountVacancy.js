@@ -10,60 +10,36 @@ function AmountVacancy() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  const salarys = data.vacancy.map((vacan) => {
-    return vacan.salary;
-  });
+  const vacancys = data.vacancy.map((vacancy) => vacancy.status);
+
+  function byStatus(status) {
+    const filterd = data.vacancy.filter(
+      (candidates) => candidates.status === status
+    );
+    return filterd.length;
+  }
+
+  const statusses = ["Open", "In Progress", "Closed"];
+  const lengths = statusses.map(byStatus);
 
   const charts = {
-    options: {
-      chart: {
-        animations: {
-          enabled: true,
-          easing: "easeinout",
-          speed: 800,
-          animateGradually: {
-            enabled: true,
-            delay: 150,
-          },
-          dynamicAnimation: {
-            enabled: true,
-            speed: 350,
-          },
-        },
-        id: "basic-bar",
-
-        sparkline: {
-          enabled: true,
-        },
-      },
-
-      xaxis: {
-        categories: [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-
-          // !salarys ? "loading" : salarys
-        ],
-      },
+    chartOptions: {
+      labels: statusses,
     },
-    series: [
-      {
-        name: "series-1",
-        data: [...salarys],
-      },
-    ],
+    series: lengths,
+    sparkline: {
+      enabled: false,
+    },
   };
 
   return (
     <div>
       <div className="mixed-chart">
         <Chart
-          options={charts.options}
+          options={charts.chartOptions}
           series={charts.series}
-          type="area"
+          dataLabels={false}
+          type="donut"
           width="100%"
           height="100%"
         />

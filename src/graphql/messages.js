@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export const GET_ALL_MESSAGES = gql`
   subscription Allmessages {
-    user(where: { id: { _eq: 2 } }) {
+    user(where: { id: { _eq: 1 } }) {
       candidates(order_by: { updated_at: desc }) {
         first_name
         status
@@ -60,12 +60,23 @@ export const SEND_MESSAGE = gql`
 
 export const RECIEVED_MESSAGES = gql`
   subscription ReceivedMessages {
-    messages(where: { reciever: { _eq: 1 } }, order_by: { timestamp: desc }) {
+    messages(
+      where: { reciever: { _eq: 1 } }
+      order_by: { timestamp: desc, user: {} }
+    ) {
       sender
       subject
       text
       timestamp
       id
+      user {
+        id
+        company_name
+      }
+      userBySender {
+        id
+        company_name
+      }
     }
   }
 `;

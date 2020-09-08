@@ -24,12 +24,7 @@ export default function AddVacancyForm() {
   const [filterdBudget, setFilterdBudget] = useState(2500);
   const [filterdSalary, setFilterdFilterdSalary] = useState(2500);
   const [AddVacancy, { data }] = useMutation(ADD_VACANCY);
-  console.log(name);
-  console.log(filterdSalary);
-  console.log(filterdBudget);
-  console.log(tags);
 
-  console.log(description);
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -42,14 +37,6 @@ export default function AddVacancyForm() {
         description,
       },
     });
-
-    console.log(name);
-    console.log(filterdSalary);
-    console.log(filterdBudget);
-    console.log(SkillOne);
-    console.log(skillTwo);
-    console.log(skillThree);
-    console.log(description);
   }
 
   if (data) {
@@ -57,10 +44,10 @@ export default function AddVacancyForm() {
   }
 
   const minBudget = 500;
-  const maxBudget = 5000;
+  const maxBudget = 15000;
 
   const minSalary = 500;
-  const maxSalary = 5000;
+  const maxSalary = 15000;
 
   const Budget = filterdBudget;
   const Salary = filterdSalary;

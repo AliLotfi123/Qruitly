@@ -10,7 +10,10 @@ export const GET_ALL_CANDIDATES = gql`
         status
         tags
         description
+        id
       }
+      company_name
+      id
     }
   }
 `;

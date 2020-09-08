@@ -15,18 +15,22 @@ export default function MesDashSections({ entry }) {
   const [first, ...rest] = messages;
 
   function toggleCollapse() {
-    console.log("This is open?", open);
     setOpen(!open);
   }
 
   return (
     <React.Fragment>
       <Row key={sender}>
-        <Col> {sender.slice(0, 12)}... </Col>
+        <Col> {first.userBySender.company_name.slice(0, 12)}... </Col>
         <Col> {first.subject.slice(0, 10)}... </Col>
 
         <Col>
-          <NewMessage sender={sender} receiver={"2"} />
+          <NewMessage
+            sender={first.user.company_name}
+            receiver={first.userBySender.id}
+            company_name={first.userBySender.company_name}
+            sender_name={first.user.company_name}
+          />
           <Button
             className="button-dashboard"
             size="sm"

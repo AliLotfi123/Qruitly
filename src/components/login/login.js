@@ -13,18 +13,16 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   function submitForm(event) {
-    console.log("Login Worked");
     event.preventDefault();
     setEmail("");
     setPassword("");
-    console.log("submitForm -> email", email);
-    console.log("submitForm -> password", password);
   }
 
   return (
     <>
       <div className="login_background">
         <Container className="login-container">
+          <userType />
           <Row>
             <Col className="col-12 col-md-12  col-lg-6 login-form-1">
               <h3> Empowering the art of recruitment</h3>

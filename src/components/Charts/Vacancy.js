@@ -17,8 +17,6 @@ export default function Vacancy({ vacancy }) {
 
   const handleClosed = () => setShow(true);
 
-  console.log("wat zijn de vacancys", vacancy.id);
-
   return (
     <Row key={vacancy.id}>
       <Col>

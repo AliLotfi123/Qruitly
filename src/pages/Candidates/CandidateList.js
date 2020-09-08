@@ -14,8 +14,6 @@ function AmountCandidate() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  console.log(data);
-
   return (
     <Row style={{ marginTop: "25px" }} className=" col-lg-12 col-md-12 AddForm">
       <Container className="containterCSS" fluid>
