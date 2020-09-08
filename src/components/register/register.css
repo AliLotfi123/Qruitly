@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+body {
+  font-family: "Raleway";
+}
+
+.register_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(95.72deg, #10375c 50.03%, #f4f6ff 50.1%);
+}
+
+.register-container {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  padding: 25px;
+}
+
+.register {
+  width: 80%;
+  height: 80%;
+  display: block;
+  margin: auto;
+}
+
+.register-form-1 {
+  padding: 5%;
+  background: #fff;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.register-form-2 {
+  padding: 5%;
+  background: #fff;
+  border-radius: 0px 10px 10px 0px;
+}
+.register-form-2 h3 {
+  text-align: center;
+  color: #10375c;
+}
+
+.register-container form {
+  padding: 1%;
+}
+
+.registerbutton {
+  width: 100%;
+  margin-top: 8%;
+  height: 40px;
+  border-radius: 10px;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+  float: left;
+
+  color: #fff;
+  background-color: #dcae1d;
+}
+
+.registerbutton:hover,
+.registerbutton:active,
+.registerbutton:focus {
+  color: #ffffff !important;
+  background-color: #dcae1d !important;
+  border-color: #dcae1d !important;
+}
+
+.button-group {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.toggle-button {
+  color: #10375c !important;
+  background-color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+  float: left !important;
+  border: solid 1px #10375c !important;
+}
+
+.toggle-button:hover,
+.toggle-button:active,
+.toggle-button:focus,
+.toggle-button:visited {
+  color: white !important;
+  background-color: #10375c !important;
+}

@@ -1,0 +1,53 @@
+.sidebarMenu {
+  padding: 2%;
+  height: 100vh;
+  background-color: #10375c;
+  color: #fff;
+  min-width: 100px;
+}
+
+.topBar {
+  margin: 25px -10px 0px 10px;
+
+  max-height: 3%;
+  min-height: 3%;
+  min-width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.Benefit {
+  margin: 0px 0px 0px 10px;
+  background-color: white;
+  padding: 10px 25px 25px 25px;
+  border-radius: 10px;
+  color: #10375c;
+}
+
+.AddForm {
+  margin: 0px 0px 0px 10px;
+  background-color: white;
+  padding: 10px 25px 25px 25px;
+  border-radius: 10px;
+  color: #10375c;
+}
+
+.centerText {
+  align-items: center;
+  text-align: center;
+  padding: 25px 25px 25px 25px;
+}
+
+.AddImg {
+  width: 20%;
+  height: 20%;
+  display: block;
+  margin: auto;
+}
+
+.text-addvacancy {
+  color: #10375c;
+}
+.TextForm {
+  margin-top: 25px;
+}
