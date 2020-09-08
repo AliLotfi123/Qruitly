@@ -1,5 +1,4 @@
 import React from "react";
-import "./vacancysRow.css";
 
 import { useSubscription } from "@apollo/react-hooks";
 
