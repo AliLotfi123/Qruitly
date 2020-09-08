@@ -55,8 +55,8 @@ export default function Candidate({ candidates }) {
                     Send message to candidate owner:{" "}
                     <NewMessage
                       sender={candidates.company_name}
-                      receiver={"2"}
-                      id={candidate.id}
+                      receiver={2}
+                      id={1}
                     />
                   </h4>
                   <Button variant="secondary" onClick={handleClose}>
