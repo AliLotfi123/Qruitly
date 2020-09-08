@@ -23,11 +23,7 @@ export default function Messages() {
     }
   });
 
-  console.log("this is senders", senders);
-
   const entries = Object.entries(senders);
-
-  console.log("This is entries", entries);
 
   const sections = entries.slice(0, 5).map((entry) => {
     const [sender, messages] = entry;

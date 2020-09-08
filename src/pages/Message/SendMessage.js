@@ -8,7 +8,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/esm/Button";
 import { SEND_MESSAGE } from "../../graphql/messages";
 
-export default function SendMessageForm({ receiver, sender, id }) {
+export default function SendMessageForm({
+  receiver,
+  sender,
+  id,
+  company_name,
+  sender_name,
+}) {
   const [subject, setSubject] = useState("");
 
   const [description, setDescription] = useState("");
@@ -51,7 +57,7 @@ export default function SendMessageForm({ receiver, sender, id }) {
                   <Form.Control
                     plaintext
                     readOnly
-                    defaultValue={sender}
+                    defaultValue={company_name}
                     type="text"
                   />
                 </Col>
@@ -68,7 +74,7 @@ export default function SendMessageForm({ receiver, sender, id }) {
                   <Form.Control
                     plaintext
                     readOnly
-                    defaultValue={receiver}
+                    defaultValue={sender_name}
                     type="text"
                   />
                 </Col>

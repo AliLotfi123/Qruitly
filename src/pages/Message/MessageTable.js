@@ -15,6 +15,14 @@ function MessageTable() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
+  // console.log(data.messages);
+
+  // data.messages.map((message) => {
+  //   console.log("This is the Receiver", message.user.id);
+  //   console.log("This is the sender", message.userBySender.id);
+  //   return message.user;
+  // });
+
   const senders = {};
   data.messages.forEach((message) => {
     const { sender } = message;
@@ -29,7 +37,6 @@ function MessageTable() {
   const entries = Object.entries(senders);
 
   const sections = entries.map((entry) => {
-    console.log(entry);
     return <MessageSection key={entry[0]} entry={entry} />;
   });
 
@@ -40,6 +47,7 @@ function MessageTable() {
       style={{ marginTop: "25px" }}
     >
       <Row className="vacancysRow">
+        <Col>My Company</Col>
         <Col>Sender</Col>
         <Col>Subject</Col>
         <Col>Message</Col>
