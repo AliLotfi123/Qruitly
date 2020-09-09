@@ -12,12 +12,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // flex row
 // flex boxes
 
-export default function Dashboard() {
+export default function Dashboard({ recruiter }) {
   return (
     <Container fluid>
       <Row>
         <Col className="col-12 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
-          <MenuItems className="sidebarMenu" />
+          <MenuItems recruiter={recruiter} className="sidebarMenu" />
         </Col>
 
         <Col className=" col-10 ">
@@ -29,26 +29,9 @@ export default function Dashboard() {
               <RightBar />
             </div>
           </Col>
-          <DashboardItems />
+          <DashboardItems recruiter={recruiter} />
         </Col>
       </Row>
     </Container>
-
-    // <Container fluid>
-    //   <Row>
-    //     <Col>
-    //
-    //
-    //     </Col>
-    //     <Col>
-    //
-    //
-    //     </Col>
-    //     <Col></Col>
-    //     <Col>
-    //
-    //     </Col>
-    //   </Row>
-    // </Container>
   );
 }

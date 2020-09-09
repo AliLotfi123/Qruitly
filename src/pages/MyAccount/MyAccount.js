@@ -9,12 +9,12 @@ import RightBar from "../../components/Navigation/RightBar";
 
 import UserDetails from "./UserDetails";
 
-export default function Activities() {
+export default function Activities({ recruiter }) {
   return (
     <Container fluid>
       <Row>
         <Col className="col-2 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
-          <MenuItems className="sidebarMenu" />
+          <MenuItems recruiter={recruiter} className="sidebarMenu" />
         </Col>
 
         <Col className=" col-10 ">

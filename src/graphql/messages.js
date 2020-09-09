@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const GET_ALL_MESSAGES = gql`
-  subscription Allmessages {
-    user(where: { id: { _eq: 1 } }) {
+  subscription Allmessages($id: Int) {
+    user(where: { id: { _eq: $id } }) {
       candidates(order_by: { updated_at: desc }) {
         first_name
         status
@@ -58,7 +58,30 @@ export const SEND_MESSAGE = gql`
   }
 `;
 
-export const RECIEVED_MESSAGES = gql`
+export const RECIEVED_MESSAGES_RECRUITER = gql`
+  subscription ReceivedMessages {
+    messages(
+      where: { reciever: { _eq: 2 } }
+      order_by: { timestamp: desc, user: {} }
+    ) {
+      sender
+      subject
+      text
+      timestamp
+      id
+      user {
+        id
+        company_name
+      }
+      userBySender {
+        id
+        company_name
+      }
+    }
+  }
+`;
+
+export const RECIEVED_MESSAGES_EMPLOYER = gql`
   subscription ReceivedMessages {
     messages(
       where: { reciever: { _eq: 1 } }

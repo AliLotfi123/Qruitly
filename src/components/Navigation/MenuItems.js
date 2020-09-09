@@ -11,20 +11,19 @@ import dash from "./img/dash.svg";
 import { useQuery } from "@apollo/react-hooks";
 
 import { GET_ACCOUNT_DETAILS } from "../../graphql/userDetails";
-import Button from "react-bootstrap/esm/Button";
+
 import Nav from "react-bootstrap/esm/Nav";
 import "./menuItems.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function MenuItems() {
+export default function MenuItems({ recruiter }) {
   const { loading, error, data } = useQuery(GET_ACCOUNT_DETAILS);
 
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
 
   return (
     <Nav className="mr-auto">
@@ -50,7 +49,7 @@ export default function MenuItems() {
             {data.user.map((user) => {
               return (
                 <>
-                  {!user.isRecruiter ? (
+                  {recruiter === false ? (
                     <>
                       <li>
                         <img src={dash} alt="addvacancy" className="img-menu" />
@@ -174,10 +173,10 @@ export default function MenuItems() {
               </NavLink>
             </li>
           </ul>
-
+          {/* 
           <Button className="logout" type="submit" onClick={handleSubmit}>
             Logout
-          </Button>
+          </Button> */}
         </div>
       </div>
     </Nav>

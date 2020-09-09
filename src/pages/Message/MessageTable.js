@@ -2,26 +2,21 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSubscription } from "@apollo/react-hooks";
 
-import { RECIEVED_MESSAGES } from "../../graphql/messages";
+import { RECIEVED_MESSAGES_RECRUITER } from "../../graphql/messages";
+import { RECIEVED_MESSAGES_EMPLOYER } from "../../graphql/messages";
 import Row from "react-bootstrap/esm/Row";
 
 import MessageSection from "./MessageSection";
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 
-function MessageTable() {
-  const { loading, error, data } = useSubscription(RECIEVED_MESSAGES);
+function MessageTable({ recruiter }) {
+  const { loading, error, data } = useSubscription(
+    !recruiter ? RECIEVED_MESSAGES_RECRUITER : RECIEVED_MESSAGES_EMPLOYER
+  );
 
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
-
-  // console.log(data.messages);
-
-  // data.messages.map((message) => {
-  //   console.log("This is the Receiver", message.user.id);
-  //   console.log("This is the sender", message.userBySender.id);
-  //   return message.user;
-  // });
 
   const senders = {};
   data.messages.forEach((message) => {

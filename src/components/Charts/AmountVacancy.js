@@ -10,8 +10,6 @@ function AmountVacancy() {
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
 
-  const vacancys = data.vacancy.map((vacancy) => vacancy.status);
-
   function byStatus(status) {
     const filterd = data.vacancy.filter(
       (candidates) => candidates.status === status

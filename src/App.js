@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -14,14 +13,25 @@ import AllRecruiters from "./pages/Recruiters/AllRecruiters";
 import AllCandidates from "./pages/Candidates/AllCandidates";
 import AddCandidate from "./pages/Candidates/AddCandidate";
 import MyAccount from "./pages/MyAccount/MyAccount";
+import Form from "react-bootstrap/esm/Form";
 
 function App() {
+  const [recruiter, setRecruiter] = useState(false);
+
   return (
     <div className="app">
+      <Form.Control
+        as="select"
+        onChange={(event) => setRecruiter(event.target.value)}
+      >
+        <option value={false}> Employer</option>
+        <option value={true}>Recruiter</option>
+      </Form.Control>
+
       <Router>
         <Switch>
           <Route exact path="/">
-            <Dashboard />
+            <Dashboard recruiter={recruiter} />
           </Route>
           <Route exact path="/login">
             <Login />
@@ -30,25 +40,25 @@ function App() {
             <Register />
           </Route>
           <Route exact path="/vacancys">
-            <VacancyList />
+            <VacancyList recruiter={recruiter} />
           </Route>
           <Route exact path="/addvacancy">
-            <AddVacancy />
+            <AddVacancy recruiter={recruiter} />
           </Route>
           <Route exact path="/addcandidate">
-            <AddCandidate />
+            <AddCandidate recruiter={recruiter} />
           </Route>
           <Route exact path="/recruiters">
-            <AllRecruiters />
+            <AllRecruiters recruiter={recruiter} />
           </Route>
           <Route exact path="/messages">
-            <ReceivedMessages />
+            <ReceivedMessages recruiter={recruiter} />
           </Route>
           <Route exact path="/candidates">
-            <AllCandidates />
+            <AllCandidates recruiter={recruiter} />
           </Route>
           <Route exact path="/myaccount">
-            <MyAccount />
+            <MyAccount recruiter={recruiter} />
           </Route>
         </Switch>
       </Router>

@@ -14,9 +14,7 @@ import Vacancys from "../../components/Charts/Vacancys";
 import Candidates from "../../components/Charts/Candidates";
 import DashboardMessages from "../Message/DashboardMessages";
 
-export default function DashboardItems() {
-  const Recruiter = false;
-
+export default function DashboardItems({ recruiter }) {
   return (
     <div>
       <Row style={{ marginTop: "25px" }}>
@@ -54,13 +52,13 @@ export default function DashboardItems() {
 
         <div className=" col-lg-4 col-md-12">
           <div className="FifthGraph ">
-            <DashboardMessages />
+            <DashboardMessages recruiter={recruiter} />
           </div>
         </div>
 
         <div className=" col-lg-8 col-md-12">
           <div className="FifthGraph  ">
-            {Recruiter ? <Vacancys /> : <Candidates />}
+            {recruiter ? <Vacancys /> : <Candidates />}
           </div>
         </div>
       </Row>

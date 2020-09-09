@@ -9,13 +9,13 @@ import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
 import MessageTable from "./MessageTable";
 
-function ReceivedMessages() {
+function ReceivedMessages({ recruiter }) {
   return (
     <>
       <Container fluid>
         <Row>
           <Col className="col-2 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
-            <MenuItems className="sidebarMenu" />
+            <MenuItems recruiter={recruiter} className="sidebarMenu" />
           </Col>
 
           <Col className=" col-10 ">
@@ -27,7 +27,7 @@ function ReceivedMessages() {
                 <RightBar />
               </div>
             </Col>
-            <MessageTable />
+            <MessageTable recruiter={recruiter} />
           </Col>
         </Row>
       </Container>

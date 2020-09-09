@@ -4,7 +4,7 @@ import { useSubscription } from "@apollo/react-hooks";
 
 import { GET_ALL_CANDIDATES } from "../../graphql/amountcandidate";
 import Row from "react-bootstrap/esm/Row";
-import Table from "react-bootstrap/esm/Table";
+
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 

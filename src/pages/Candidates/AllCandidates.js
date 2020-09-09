@@ -9,13 +9,13 @@ import LeftBar from "../../components/Navigation/LeftBar";
 import RightBar from "../../components/Navigation/RightBar";
 import CandidateList from "./CandidateList";
 
-function AmountCandidate() {
+function AmountCandidate({ recruiter }) {
   return (
     <>
       <Container fluid>
         <Row>
           <Col className="col-2 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
-            <MenuItems className="sidebarMenu" />
+            <MenuItems recruiter={recruiter} className="sidebarMenu" />
           </Col>
 
           <Col className=" col-10 ">
