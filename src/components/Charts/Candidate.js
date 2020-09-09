@@ -14,8 +14,6 @@ export default function Candidate({ candidates }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log("Hier komt het binnen", candidates);
-
   return (
     <>
       {candidates.candidates.map((candidate) => {

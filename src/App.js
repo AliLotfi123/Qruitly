@@ -16,7 +16,13 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import Form from "react-bootstrap/esm/Form";
 
 function App() {
-  const [recruiter, setRecruiter] = useState(false);
+  const [recruiter, setRecruiter] = useState(true);
+
+  console.log("recruiter is false or true", recruiter);
+
+  useEffect(() => {
+    setRecruiter();
+  }, []);
 
   return (
     <div className="app">
