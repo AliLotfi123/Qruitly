@@ -10,14 +10,17 @@ import message from "./img/message.svg";
 import dash from "./img/dash.svg";
 import { useQuery } from "@apollo/react-hooks";
 
-import { GET_ACCOUNT_DETAILS } from "../../graphql/userDetails";
+import { GET_ACCOUNT_EMPLOYER } from "../../graphql/userDetails";
+import { GET_ACCOUNT_RECRUITER } from "../../graphql/userDetails";
 
 import Nav from "react-bootstrap/esm/Nav";
 import "./menuItems.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function MenuItems({ recruiter }) {
-  const { loading, error, data } = useQuery(GET_ACCOUNT_DETAILS);
+  const { loading, error, data } = useQuery(
+    !recruiter ? GET_ACCOUNT_RECRUITER : GET_ACCOUNT_EMPLOYER
+  );
 
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
@@ -27,7 +30,7 @@ export default function MenuItems({ recruiter }) {
 
   return (
     <Nav className="mr-auto">
-      <div className="Navbar">
+      <div className="Navbar" key={data.user.id}>
         <div className="container">
           <Navbar.Brand className="logo" as={NavLink} to="/">
             Qruitly

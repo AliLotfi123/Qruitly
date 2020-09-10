@@ -1,7 +1,7 @@
 import React from "react";
 import AmountVacancy from "../../components/Charts/AmountVacancy";
 import AmountCandidates from "../../components/Charts/AmountCandidates";
-
+import { Link } from "react-router-dom";
 import standingperson from "./img/standingperson.svg";
 
 import Row from "react-bootstrap/Row";
@@ -15,6 +15,14 @@ import Candidates from "../../components/Charts/Candidates";
 import DashboardMessages from "../Message/DashboardMessages";
 
 export default function DashboardItems({ recruiter }) {
+  function Recruiter() {
+    return recruiter ? (
+      <Link to="/addcandidate">Add Candidate</Link>
+    ) : (
+      <Link to="/addcandidate">Add Vacancys</Link>
+    );
+  }
+
   return (
     <div>
       <Row style={{ marginTop: "25px" }}>
@@ -43,7 +51,7 @@ export default function DashboardItems({ recruiter }) {
                 Offering discounts for better online a store can loyalty weapon
                 into driving
               </p>
-              <Button className="loginbtn" type="submit" onClick={"hoi"}>
+              <Button className="loginbtn" type="submit" onClick={Recruiter}>
                 Add
               </Button>
             </div>

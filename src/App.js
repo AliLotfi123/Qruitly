@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,13 +16,7 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import Form from "react-bootstrap/esm/Form";
 
 function App() {
-  const [recruiter, setRecruiter] = useState(true);
-
-  console.log("recruiter is false or true", recruiter);
-
-  useEffect(() => {
-    setRecruiter();
-  }, []);
+  const [recruiter, setRecruiter] = useState(false);
 
   return (
     <div className="app">

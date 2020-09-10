@@ -20,14 +20,14 @@ export default function Activities({ recruiter }) {
         <Col className=" col-10 ">
           <Col className="offset-2 col-md-12 topBar ">
             <div style={{ float: "left" }}>
-              <LeftBar />
+              <LeftBar recruiter={recruiter} />
             </div>
             <div style={{ float: "right" }}>
-              <RightBar />
+              <RightBar recruiter={recruiter} />
             </div>
           </Col>
 
-          <UserDetails />
+          <UserDetails recruiter={recruiter} />
         </Col>
       </Row>
     </Container>

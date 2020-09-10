@@ -1,11 +1,14 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
-import { GET_ACCOUNT_DETAILS } from "../../graphql/userDetails";
+import { GET_ACCOUNT_EMPLOYER } from "../../graphql/userDetails";
+import { GET_ACCOUNT_RECRUITER } from "../../graphql/userDetails";
 
 import Row from "react-bootstrap/esm/Row";
-export default function TopBar() {
-  const { loading, error, data } = useQuery(GET_ACCOUNT_DETAILS);
+export default function TopBar({ recruiter }) {
+  const { loading, error, data } = useQuery(
+    recruiter ? GET_ACCOUNT_RECRUITER : GET_ACCOUNT_EMPLOYER
+  );
 
   if (loading) return "Loading...";
   if (error) return <p>Error! ${error.message}</p>;
