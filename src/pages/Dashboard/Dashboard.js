@@ -21,7 +21,7 @@ export default function Dashboard({ recruiter }) {
         </Col>
 
         <Col className=" col-10 ">
-          <Col className="offset-2 col-md-12 topBar ">
+          <Col className="col-md-12 topBar ">
             <div style={{ float: "left" }}>
               <LeftBar recruiter={recruiter} />
             </div>

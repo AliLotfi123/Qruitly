@@ -13,12 +13,12 @@ export default function Activities({ recruiter }) {
   return (
     <Container fluid>
       <Row>
-        <Col className="col-2 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
+        <Col className="col-12 col-lg-2 col-md-12 col-sm-12 sidebarMenu">
           <MenuItems recruiter={recruiter} className="sidebarMenu" />
         </Col>
 
         <Col className=" col-10 ">
-          <Col className="offset-2 col-md-12 topBar ">
+          <Col className="col-md-12 topBar ">
             <div style={{ float: "left" }}>
               <LeftBar recruiter={recruiter} />
             </div>
